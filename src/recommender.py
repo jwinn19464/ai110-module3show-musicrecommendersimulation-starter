@@ -28,6 +28,8 @@ class UserProfile:
     favorite_mood: str
     target_energy: float
     likes_acoustic: bool
+    
+    
 
 class Recommender:
     """

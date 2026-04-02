@@ -1,5 +1,42 @@
 # 🎵 Music Recommender Simulation
 
+Notes:
+collab filtering - based on user-item interaction patterns (maybe, like behavior pattern based?); based on behavioral signal
+
+content-based filtering - based on item characteristics and how well they match user tastes. (so maybe like, attribute-based); for new items and better understand of items
+
+User interaction data
+
+explicit feedback: likes, dislikes, ratings, favorites, saved songs/videos
+implicit feedback: plays, skips, replays, watch time, completion rate, dwell time
+playlist actions: adding/removing tracks, playlist follows, playlist creation
+search history and clicks
+Item metadata
+
+content tags: genre, artist, album, category
+attributes: tempo, mood, key, duration, energy, acousticness
+semantic/text data: lyrics, descriptions, titles, transcripts, tags
+Context data
+
+time: hour of day, day of week, season
+device: phone, desktop, smart speaker
+location and language
+session state: current queue, recent history, how long user has been active
+Social/popularity signals
+
+trending items, charts, popularity scores
+what similar users are listening to
+social shares, follows, collaborative playlists
+Derived or inferred features
+
+user taste profile: preferred genres, artists, moods
+item similarity scores
+sequence patterns: next-item predictions, transitions
+These systems combine many of those data types to decide “what should be recommended next.”
+
+valence - numeric measure of how happy/positive a track feels. Lower = more dark and sad.
+Lower acousticness = more electronic feel
+
 ## Project Summary
 
 In this project you will build and explain a small music recommender system.
