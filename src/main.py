@@ -13,10 +13,12 @@ from recommender import load_songs, recommend_songs
 
 
 def main() -> None:
+    """Run the music recommender simulation with a sample user profile."""
     songs = load_songs("data/songs.csv") 
 
     # Starter example profile
-    user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8}
+    # genre and mood should be lists, add weights, use ranges for numerical attributes, include preferences for variety as well as dislikes, 
+    user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8, "danceability": 0.7, "likes_acoustic": False}
 
     recommendations = recommend_songs(user_prefs, songs, k=5)
 

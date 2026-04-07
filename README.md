@@ -56,13 +56,32 @@ Replace this paragraph with your own summary of what your version does.
 
 Explain your design in plain language.
 
+In summary, the system will compare songs against the user's preferences and recommend songs that are most similar. Songs that more closely match the preferences have a higher score and thus, are more likely to be recommended.
+
 Some prompts to answer:
 
 - What features does each `Song` use in your system
   - For example: genre, mood, energy, tempo
+
+  Each Song is classified by the mood, energy, tempo, valence, danceability, and acousticness as I believe that these traits would reflect the "vibe" of a song and thus, a person's taste in music.
+
 - What information does your `UserProfile` store
+
+The `UserProfile` stores user information such as username, age, gender, preferences (high energy, medium-high danceability, low acousticness), favorite artist, favorite song, etc.
+
 - How does your `Recommender` compute a score for each song
+The `Recommender` would compute a score for each song by checking the song against the preferences stated in the user profile (i.e. do a distance calculation between the attribute of the song and the preference stated)
+Preference levels (on a sliding scale):
+No = 0
+Very Low = 0.05
+Low = 0.20
+Medium-Low = 0.35
+Medium = 0.5
+Medium-High = 0.65
+High = 0.80
+Very High = 1.0
 - How do you choose which songs to recommend
+The recommended songs would be the songs with the smallest distance from the preferences after the individual distance from each preference has been aggregated (either by sum or mean pooling).
 
 You can include a simple diagram or bullet list if helpful.
 
@@ -246,3 +265,5 @@ A few sentences about what you learned:
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
 
+## Output
+![alt text](image.png)
