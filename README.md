@@ -135,6 +135,7 @@ Use this section to document the experiments you ran. For example:
 - How did your system behave for different types of users
 
 When I changed weights, some songs changed positions in ranking, but the list remained mostly the same. I added edge cases and the model was unable to react very well to them as it is rigid.
+
 ---
 
 ## Limitations and Risks
@@ -311,5 +312,4 @@ The majority of the music recommendations do not make sense as they do not accou
 ![alt text](image-8.png)
 
 For the most part, the system is not very sensitive to these changes as the most of the same songs were recommended in the same order, most of the time.
-=======
->>>>>>> aac77f3 (Enhance README with user profile and recommender details)
+
