@@ -71,6 +71,7 @@ The `UserProfile` stores user information such as username, age, gender, prefere
 
 - How does your `Recommender` compute a score for each song
 The `Recommender` would compute a score for each song by checking the song against the preferences stated in the user profile (i.e. do a distance calculation between the attribute of the song and the preference stated)
+\
 Preference levels (on a sliding scale):
 No = 0
 Very Low = 0.05
@@ -80,6 +81,7 @@ Medium = 0.5
 Medium-High = 0.65
 High = 0.80
 Very High = 1.0
+\
 - How do you choose which songs to recommend
 The recommended songs would be the songs with the smallest distance from the preferences after the individual distance from each preference has been aggregated (either by sum or mean pooling).
 
@@ -289,6 +291,7 @@ Human judgment still matters when looking at ambiguous situations or situations 
 
 ## Output
 ![alt text](image.png)
+<<<<<<< HEAD
 
 ### Results of Different Profiles
 ![alt text](image-1.png)
@@ -303,3 +306,5 @@ The majority of the music recommendations do not make sense as they do not accou
 ![alt text](image-8.png)
 
 For the most part, the system is not very sensitive to these changes as the most of the same songs were recommended in the same order, most of the time.
+=======
+>>>>>>> aac77f3 (Enhance README with user profile and recommender details)
