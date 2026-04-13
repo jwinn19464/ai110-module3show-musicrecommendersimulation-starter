@@ -17,19 +17,68 @@ def main() -> None:
     songs = load_songs("data/songs.csv") 
 
     # Starter example profile
-    # genre and mood should be lists, add weights, use ranges for numerical attributes, include preferences for variety as well as dislikes, 
-    user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8, "danceability": 0.7, "likes_acoustic": False}
+    starter_profile = {
+        "genre": "pop",
+        "mood": "happy",
+        "energy": 0.8,
+        "danceability": 0.7,
+        "likes_acoustic": False,
+    }
 
-    recommendations = recommend_songs(user_prefs, songs, k=5)
+    # Adversarial / edge-case user profiles designed to test scoring logic
+    adversarial_profiles = [
+        {
+            "name": "high_energy_sad",
+            "profile": {
+                "genre": "pop",
+                "mood": "sad",
+                "energy": 0.9,
+                "danceability": 0.2,
+                "likes_acoustic": False,
+            },
+        },
+        {
+            "name": "acoustic_dance_conflict",
+            "profile": {
+                "genre": "electronic",
+                "mood": "happy",
+                "energy": 0.15,
+                "danceability": 0.95,
+                "likes_acoustic": True,
+            },
+        },
+        {
+            "name": "low_energy_hateful",
+            "profile": {
+                "genre": "rap",
+                "mood": "hateful",
+                "energy": 0.0,
+                "danceability": 0.0,
+                "likes_acoustic": False,
+            },
+        },
+    ]
 
-    print("\nTop recommendations:\n")
-    for rec in recommendations:
-        # You decide the structure of each returned item.
-        # A common pattern is: (song, score, explanation)
-        song, score, explanation = rec
-        print(f"{song['title']} - Score: {score:.2f}")
-        print(f"Because: {explanation}")
-        print()
+    all_profiles = [
+        {"name": "starter", "profile": starter_profile},
+        *adversarial_profiles,
+    ]
+
+    for variant in all_profiles:
+        name = variant["name"]
+        user_prefs = variant["profile"]
+        print(f"\n=== Recommendations for profile: {name} ===")
+        recommendations = recommend_songs(user_prefs, songs, k=5)
+        for rec in recommendations:
+            song, score, explanation = rec
+            print(f"{song['title']} by {song['artist']} - Score: {score:.2f}")
+            print(f"  genre: {song['genre']}, mood: {song['mood']}, energy: {song['energy']:.2f}, danceability: {song['danceability']:.2f}, acousticness: {song['acousticness']:.2f}")
+            print(f"  Because: {explanation}")
+            print()
+
+        print("User profile:")
+        for key, value in user_prefs.items():
+            print(f"  {key}: {value}")
 
 
 if __name__ == "__main__":
