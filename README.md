@@ -83,6 +83,7 @@ Preference levels (on a sliding scale):
 - Very High = 1.0
 
 - How do you choose which songs to recommend
+  
 The recommended songs would be the songs with the smallest distance from the preferences after the individual distance from each preference has been aggregated (either by sum or mean pooling).
 
 You can include a simple diagram or bullet list if helpful.
