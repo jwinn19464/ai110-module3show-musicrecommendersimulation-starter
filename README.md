@@ -163,6 +163,7 @@ Write 1 to 2 paragraphs here about what you learned:
 
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
+  
 I learned that recommenders turn data into predictions by scoring the data against the standard given, the user's preferences in this case, and adjusting the scores based on the weights given or learned.
 Furthermore, bias can show up as some systems are rigid and account for only a few possibilities. With that, they are biased towards those cases and ignoring whatever they cannot account for. In addition, bias can happen if the training data is imbalanced in favor of one class.
 
@@ -300,8 +301,10 @@ Human judgment still matters when looking at ambiguous situations or situations 
 ![alt text](image-2.png)
 ![alt text](image-3.png)
 ![alt text](image-4.png)
+
 The majority of the music recommendations do not make sense as they do not account for the edge cases. In fact, the "low_energy_hateful" profile was designed with some of Kendrick Lamar's songs in mind, for when someone wants to vibe with the diabolical pettiness and hate that he has for Drake. Instead of recommending songs with a more negative mood or low energy, most of the recommendations had high energy and/or a more positive mood (peaceful/happy).
 ### After changing weights of energy and genre
+
 ![alt text](image-5.png)
 ![alt text](image-6.png)
 ![alt text](image-7.png)
