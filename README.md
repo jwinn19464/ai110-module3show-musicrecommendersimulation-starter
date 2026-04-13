@@ -1,6 +1,7 @@
 # 🎵 Music Recommender Simulation
 
 Notes:
+
 collab filtering - based on user-item interaction patterns (maybe, like behavior pattern based?); based on behavioral signal
 
 content-based filtering - based on item characteristics and how well they match user tastes. (so maybe like, attribute-based); for new items and better understand of items
